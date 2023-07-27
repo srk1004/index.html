@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+  <html>
+    <head> 
+      <meta charset="utf-8"> 
+      <title>足球场上的位置分布</title> 
+    </head>
+    <body>
+
+      <div id="container" style="width:1900px">
+
+      <div id="header" style="background-color:#FFA400;">
+      <h1 style="margin-bottom:0;">足球运动/位置</h1></div>
+
+      <div id="menu" style="background-color:#FFD700;height:1000px;width:200px;float:left;">
+      <b></b><br>
+        <button style=height:40px;width:180px; click="button" onclick="showContent(1)">守门员</button>
+        <button style=height:40px;width:180px; class="button" onclick="showContent(2)">后卫线</button>
+        <button style=height:40px;width:180px; class="button" onclick="showContent(3)">中场线</button>
+        <button style=height:40px;width:180px; class="button" onclick="showContent(4)">前锋线</button>
+      </div>
+      <div>
+        <div class="content"><img src="https://p8.itc.cn/q_70/images03/20200621/58880366f8204d778bff22f268fdbb5b.jpeg" width="800" height="500"></div>
+        <div class="content"><img src="https://p6.itc.cn/q_70/images03/20210627/b4c2ab835f6c43389572c29b74daaeab.jpeg" width="850" height="500"></div>
+        <div class="content"><img src="https://5b0988e595225.cdn.sohucs.com/images/20181204/2952219bdfa5464680cdcf83f1456561.jpeg" width="850" height="500"></div>
+        <div class="content"><img src="https://nimg.ws.126.net/?url=http%3A%2F%2Fdingyue.ws.126.net%2F2021%2F0103%2Fcca4f782p00qmbujt00f1c000hs00bnc.png&thumbnail=660x2147483647&quality=80&type=jpg" width="800" height="500"></div>
+      </div>
+    </div>
+    <script>
+      function showContent(index) {
+        var contents = document.getElementsByClassName("content");
+        for (var i = 0; i < contents.length; i++) {
+          contents[i].style.display = "none";
+        }
+        var content = document.getElementsByClassName("content")[index - 1];
+        content.style.display = "block";
+        var buttons = document.getElementsByClassName("button");
+        for (var i = 0; i < buttons.length; i++) {
+          buttons[i].classList.remove("active");
+        }
+        var button = document.getElementsByClassName("button")[index - 1];
+        button.classList.add("active");
+      }
+      showContent(1);
+    </script>
+  </body>
+  </html>
